@@ -36,7 +36,7 @@ jobs:
       run: python alerts/rca_generator.py
 
     - name: 📄 Upload RCA Output (optional)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: rca-output
         path: RCA_*.md
