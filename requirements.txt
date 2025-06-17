@@ -1,0 +1,4 @@
+azure-functions
+pyyaml
+re
+smtplib

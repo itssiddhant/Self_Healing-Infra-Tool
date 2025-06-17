@@ -1,0 +1,5 @@
+[
+  {"timestamp": "2025-06-01T10:00:00Z", "message": "ERROR 500 at /api/v1/user"},
+  {"timestamp": "2025-06-01T10:01:00Z", "message": "disk full on /dev/sda1"},
+  {"timestamp": "2025-06-01T10:02:00Z", "message": "service started"}
+]

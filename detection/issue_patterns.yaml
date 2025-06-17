@@ -1,0 +1,5 @@
+- pattern: "ERROR 500"
+  action: "restart_service"
+
+- pattern: "disk full"
+  action: "clear_temp_logs"
