@@ -1,5 +1,6 @@
 import subprocess
 
+
 def is_vm_running(vm_name: str) -> bool:
     """Simulated system status check. Replace with real cloud or CLI status check."""
     try:
@@ -7,6 +8,7 @@ def is_vm_running(vm_name: str) -> bool:
         return result.returncode == 0
     except Exception:
         return False
+
 
 def is_disk_full(threshold_percent=90) -> bool:
     """Check disk usage on Unix-like systems."""
@@ -16,6 +18,7 @@ def is_disk_full(threshold_percent=90) -> bool:
         return int(percent_str) >= threshold_percent
     except Exception:
         return False
+
 
 # Example usage
 if __name__ == "__main__":

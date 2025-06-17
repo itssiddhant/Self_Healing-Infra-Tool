@@ -1,5 +1,6 @@
 import datetime
 
+
 def generate_rca(issue_type, impact, root_cause, resolution, action_items):
     date_str = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
     filename = f"RCA_{issue_type.replace(' ', '_')}_{date_str}.md"
@@ -14,6 +15,7 @@ def generate_rca(issue_type, impact, root_cause, resolution, action_items):
             f.write(f"- {item}\n")
     print(f"RCA saved to {filename}")
 
+
 # Example usage
 if __name__ == "__main__":
     generate_rca(
@@ -21,5 +23,5 @@ if __name__ == "__main__":
         impact="Temporary outage on EFR App",
         root_cause="Unattended log growth on /var/log",
         resolution="Deleted logs and increased disk space",
-        action_items=["Setup logrotate", "Add disk alert at 80%"]
+        action_items=["Setup logrotate", "Add disk alert at 80%"],
     )

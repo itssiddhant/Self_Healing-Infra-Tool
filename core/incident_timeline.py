@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 
+
 def generate_timeline(log_path="actions.log", output="incident_timeline.md"):
     if not os.path.exists(log_path):
         print("No actions.log file found.")
@@ -17,10 +18,11 @@ def generate_timeline(log_path="actions.log", output="incident_timeline.md"):
                 timestamp = timestamp.strip("[")
                 dt = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
                 f.write(f"- ⏰ **{dt.strftime('%d %b %Y, %I:%M %p')}** → {event}\n")
-            except Exception as e:
+            except Exception:
                 f.write(f"- Malformed log line: {line.strip()}\n")
 
     print(f"Timeline written to {output}")
+
 
 if __name__ == "__main__":
     generate_timeline()

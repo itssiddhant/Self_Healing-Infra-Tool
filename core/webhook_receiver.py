@@ -5,6 +5,7 @@ from utils.logger import log_action
 app = Flask(__name__)
 CONFIG = load_config()
 
+
 @app.route("/webhook", methods=["POST"])
 def webhook():
     data = request.json
@@ -17,6 +18,7 @@ def webhook():
         return jsonify({"status": "triggered", "action": action}), 200
     else:
         return jsonify({"status": "ignored", "reason": "no match or not verified"}), 200
+
 
 if __name__ == "__main__":
     app.run(port=5050)
