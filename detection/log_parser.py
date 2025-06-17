@@ -1,4 +1,5 @@
 import json, re, yaml
+from utils.logger import log_action
 
 def load_logs():
     with open('../logs/mock_logs.json') as f:
@@ -22,3 +23,4 @@ if __name__ == '__main__':
     results = detect_issues(logs, patterns)
     for r in results:
         print(f"Detected: {r['action']} on log: {r['log']['message']}")
+        log_action(f"Detected issue: {r['action']} | Log: {r['log']['message']}")

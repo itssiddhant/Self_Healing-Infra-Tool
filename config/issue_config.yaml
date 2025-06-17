@@ -1,0 +1,10 @@
+alerts:
+  - name: "Service Failure"
+    pattern: "ERROR 500"
+    action: "restart_vm"
+    verify: "is_vm_running"
+
+  - name: "Disk Full"
+    pattern: "disk full"
+    action: "clear_temp"
+    verify: "is_disk_full"
