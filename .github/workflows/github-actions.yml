@@ -1,4 +1,4 @@
-name: Self-Healing CI Pipeline
+name: Self-Healing CI Pipeline 🚀
 
 on:
   push:
@@ -9,25 +9,34 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
+    - name: 🔄 Checkout Repo
+      uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
 
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+    - name: 📦 Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install flake8
 
-      - name: Run Linter
-        run: |
-          pip install flake8
-          flake8 detection/ remediation/ core/ alerts/
+    - name: 🧼 Run Linter (flake8)
+      run: flake8 detection/ remediation/ core/ alerts/
 
-      - name: Run Sample RCA Generator
-        run: |
-          python alerts/rca_generator.py
+    - name: ✅ Run Unit Tests (if any)
+      run: |
+        echo "No formal unit tests yet, skip or add test_*.py later"
+
+    - name: 🧪 Run RCA Generator (Sample)
+      run: python alerts/rca_generator.py
+
+    - name: 📄 Upload RCA Output (optional)
+      uses: actions/upload-artifact@v3
+      with:
+        name: rca-output
+        path: RCA_*.md
