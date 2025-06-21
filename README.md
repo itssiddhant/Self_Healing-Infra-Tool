@@ -1,3 +1,5 @@
+![CI](https://github.com/itssiddhant/Self_Healing-Infra-Tool/actions/workflows/github-actions.yml/badge.svg)
+
 # Self-Healing Infra Tool 🔧
 
 A modular tool that detects known system failures from logs and remediates them using Power Automate or Azure Functions.
